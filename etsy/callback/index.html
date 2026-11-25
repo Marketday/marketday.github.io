@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Back to Market Day</title>
+<style>
+  body{font-family:-apple-system,system-ui,sans-serif;background:#F6EAE7;color:#2A1A1E;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0;text-align:center;padding:24px}
+  a{display:inline-block;margin-top:16px;padding:14px 22px;border-radius:14px;background:#B02A57;color:#fff;text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+<div>
+  <h1>Connecting Etsy…</h1>
+  <p>Taking you back to Market Day.</p>
+  <a id="open" href="marketday://etsy-callback">Open Market Day</a>
+</div>
+<script>
+  // Etsy sends ?code=...&state=... here. Pass them straight to the app; nothing is stored on this page.
+  var target = "marketday://etsy-callback" + window.location.search;
+  document.getElementById("open").href = target;
+  window.location.replace(target);
+</script>
+</body>
+</html>
