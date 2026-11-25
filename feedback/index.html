@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Day Feedback</title>
+<style>
+  body{font-family:-apple-system,system-ui,sans-serif;background:#F6EAE7;color:#2A1A1E;margin:0;padding:32px 20px;line-height:1.55}
+  main{max-width:680px;margin:0 auto;background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 10px 30px rgba(176,42,87,.12)}
+  h1{margin-top:0;font-size:28px}
+  h2{font-size:19px;margin-top:28px}
+  a{color:#B02A57}
+  .muted{color:#6b5a5e;font-size:15px}
+  iframe{width:100%;min-height:900px;border:0}
+</style>
+</head>
+<body>
+<main>
+  <h1>Send Feedback</h1>
+  <p class="muted">Ideas, bugs or questions. We read every one.</p>
+  <div id="form"></div>
+  <p class="muted" id="note"></p>
+  <script>
+    // Paste the form's embed link here once it's made.
+    const FORM_URL = "";
+    const box = document.getElementById("form");
+    if (FORM_URL) {
+      box.innerHTML = '<iframe src="' + FORM_URL + '" title="Feedback form" loading="lazy"></iframe>';
+    } else {
+      box.innerHTML = '<p>The feedback form is almost ready. Check back soon.</p>';
+    }
+    const v = new URLSearchParams(location.search).get("v");
+    if (v) document.getElementById("note").textContent = "App version " + v;
+  </script>
+  <p><a href="../support/">Help and common questions</a></p>
+</main>
+</body>
+</html>
